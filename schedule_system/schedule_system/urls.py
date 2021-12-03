@@ -16,6 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+# Let´s import the views
+from core import views 
+
+# Let´s import the library to redirect pages
+from django.views.generic import RedirectView
+
+# Let´s define the routes
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', RedirectView.as_view(url='/schedule/')),  # Index Site Page (Let´s redirect to schedule page)
+    path('schedule/', views.list_events),              # Schedule
+    path('admin/', admin.site.urls),                   # Admin
 ]

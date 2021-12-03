@@ -22,3 +22,7 @@ class Event(models.Model):
     # Overload the method str
     def __str__(self):
         return self.title
+    
+    # Get event_date
+    def getEventDate(self):
+        return self.event_date.strftime("%d/%m/%Y %H:%M")

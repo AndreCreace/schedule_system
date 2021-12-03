@@ -1,0 +1,16 @@
+<!-- Let´s extends the model-page -->
+{% extends "model-page.html" %}
+
+<!-- Main Block-->
+{% block content %}
+
+    <h3 class="teste">Schedules</h3>
+
+    <!-- Let´s show te event title -->
+    <ul>
+        {% for event in events %}
+            <li>{{ event.title }} - {{ event.description }} - {{ event.getEventDate }} </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
