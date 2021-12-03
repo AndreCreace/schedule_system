@@ -25,6 +25,9 @@ from django.views.generic import RedirectView
 # Let´s define the routes
 urlpatterns = [
     path('', RedirectView.as_view(url='/schedule/')),  # Index Site Page (Let´s redirect to schedule page)
-    path('schedule/', views.list_events),              # Schedule
+    path('schedule/', views.list_user_events),              # Schedule
     path('admin/', admin.site.urls),                   # Admin
+    path('login/', views.login_user),                  # Login page
+    path('login/submit', views.submit_login),          # Validade User and Password
+    path('logout/', views.logout_user)
 ]

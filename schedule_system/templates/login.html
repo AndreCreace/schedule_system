@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Login</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>Login</h1>
+
+    <div align="center">
+        <!-- Form to login: csrf_token it´s necessary for the Django, and it´s a token of security -->
+        <form action="submit" method="POST"> {% csrf_token %}
+            <label>User</label>
+            <input type="text" name="username">
+            <label>Password</label>
+            <input type="password" name="password">
+            <button type="submit">Enter</button>
+        </form>
+
+        <!-- Let´s show the error messages -->
+        {% for message in messages %}
+            <strong>Erro:</strong>{{ message }}
+        {% endfor %}
+    </div>
+
+</body>
+</html>
